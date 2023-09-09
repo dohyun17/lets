@@ -5,4 +5,5 @@ app_name = 'edu'
 
 urlpatterns = [
     path('', views.Index.as_view(), name='index'),
+    path('tag', views.TagStudy.as_view(), name='tag_study')
 ]
