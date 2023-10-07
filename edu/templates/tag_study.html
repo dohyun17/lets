@@ -12,14 +12,24 @@
         <strong>이도현</strong><br/>
         학생
     </p>
+    <a href="{% url 'edu:new_content'%}">새글등록</a>
+        <ul>
+            {% for f in feed_list %}
+                <li>
+                {{ f.content }}
+                </li>
+            {% endfor %}
+        </ul>
+
     <p>
         <a href= "https://www.google.co.kr/?hl=ko"
             target="_blank"
         >
         구글</a>
-
-    게시물<br/>
-    팔로워<br/>
-    팔로우<br/>
+<p>  
+    게시물 54<br/>
+    팔로워 87<br/>
+    팔로우 31<br/>
     </p>
+
 {% endblock content %}
