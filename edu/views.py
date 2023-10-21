@@ -24,6 +24,19 @@ class NewContent(View):
         return render(request, self.template_name)
     
     def post(self, request):
+        age = request.POST.get('age','0')
+        print(f'age:{age}')
+        if age=='':
+            age=0
+        else:
+            age = int(age)
+
+        pwd= request.POST.get('pwd', '')
+        print(f'비밀전호:{pwd}')
+
+        tel = request.POST.get('phone', '')
+        print(f'전화번호:{tel}')
+
         param = request.POST.get("content")
         print("전달받은 내용:" + param)
         feed = Feed(content=param)

@@ -3,6 +3,37 @@
     <form action="{% url 'edu:new_content'%}" method="POST">
         {% csrf_token %}
         <input type="text" name="content"/>
-        <input type="submit"/>
+        <input type="submit" value="저장"/>
+        <p>
+            <label for="age_input">나이:</label>
+            <input type="number" name="age" id="age_input"/>
+        </p>          
+        <p>
+            <label for="pwd_input">비밀번호:</label>
+            <input type="password" name="pwd" id="pwd_input"/>
+        </p>
+        <p>
+            <label for="phone_input">전화번호:</label>
+            <input type="tel" name="phone" id="phone input"
+                placeholder="' - '없이 입력"/>
+        </p>
+
+        <p>
+            <label for="search_input">검색:</label>
+            <input type="search" name="query" id="search_input"
+                placeholder="검색어를 입력하세요."/>
+        </p>
+        <p>
+            <label for="color_input">색 선택:</label>
+            <input type="color" name="color" id="color_input"/>
+        </p>    
+        <p>
+            <label for="rng_input">범위 선택:</label>
+            <input type="range" name="rng" id="rng_input"/>
+        </p>    
+        <p>
+            <label for="birth_input">생일 선택:</label>
+            <input type="date" name="birth" id="birth_input"/>
+        </p>    
     </form>
 {% endblock content %}
