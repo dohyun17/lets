@@ -4,6 +4,8 @@
         {% csrf_token %}
         <input type="text" name="content"/>
         <input type="submit" value="저장"/>
+
+
         <p>
             <label for="age_input">나이:</label>
             <input type="number" name="age" id="age_input"/>
@@ -35,5 +37,37 @@
             <label for="birth_input">생일 선택:</label>
             <input type="date" name="birth" id="birth_input"/>
         </p>    
+        <input type="checkbox">아침을 드셨나요?</input>
+        <input type="checkbox">점심을 드셨나요?</input>
+        <input type="checkbox">저녁을 드셨나요?</input>
+
+        <br/>
+
+        <p>
+            <input type="radio" name="radio1" checked/>한식
+            <input type="radio" name="radio1" >중식
+            <input type="radio" name="radio1" >양식
+            <input type="radio" name="radio1" >일식
+        </p>
+        <p>
+            <input type="radio" name="radio2" checked/>뜨거운것
+            <input type="radio" name="radio2" >차가운것
+        </p>
+        <p>
+            <input type="radio" name="radio3" checked/>매운것
+            <input type="radio" name="radio3" >안매운것
+        </p>
+        <p>
+            <textarea cols="50" rows="10"></textarea>
+        </p>
+        <p>
+            <select>
+                <option value="1">피자</option>
+                <option value="2">마라탕</option>
+                <option value="3">치킨</option>
+                <option value="4">짜장</option>
+            </select>
+        </p>
+
     </form>
 {% endblock content %}

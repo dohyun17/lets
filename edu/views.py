@@ -42,4 +42,9 @@ class NewContent(View):
         feed = Feed(content=param)
         feed.save()
         return redirect('edu:tag_study')
-           
+    
+class Servey(View):
+    template_name = 'servey.html'
+
+    def get(self, request):
+        return render(request, self.template_name)

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+     <p>
+            <label for="search_input">이름:</label>
+            <input type="text" name="query" id="search_input"
+                placeholder="이름을 반드시 입력해주세요" size="22"/>
+    </p>
+    <p>
+            <label for="address_input">주소:</label>
+            <input type="text" name="address" id="address_input"/>
+    </p>
+    <p>
+        <label for="company_input">회사:</label>
+        <input type="text" name="company" id="company_input" value="naver"
+        disabled/>
+    </p>
+    <p>
+        <h>성별:</h>
+        <input type="radio" name="radio2" checked/>남
+        <input type="radio" name="radio2" >여
+    </p>
+    <p>
+        <h>전화번호 앞자리:</h>
+        <input type="radio" name="radio3" checked/>기타
+        <input type="radio" name="radio3" >010
+    </p>
+        <h>좋아하는 애완 동물은?
+        <input type="checkbox">개</input>
+        <input type="checkbox">고양이</input>
+        <input type="checkbox">뱀</input>
+        <input type="checkbox">개미</input>
+    <p>
+        <label for="id_input">ID:</label>
+        <input type="text" name="query" id="id_input"
+            placeholder="아이디"/>
+    </p>
+    <p>
+        <label for="pwd_input">PW:</label>
+        <input type="password" name="query" id="pwdid_input"
+            placeholder="패스워드"/>
+    </p>
+    <p>
+        <select>
+            <option value="1">010</option>
+            <option value="2">016</option>
+            <option value="3">017</option>
+        </select>
+    </p>
+    <p>
+            <textarea cols="45" rows="25" placeholder="Memo"></textarea>
+    </p>
+
+{% endblock content %}
