@@ -48,3 +48,14 @@ class Servey(View):
 
     def get(self, request):
         return render(request, self.template_name)
+    
+class palgong(View):
+    template_name = 'palgong.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
+    
+    def post(self, request):
+        param = request.POST.get('tea', '')
+        print(f"param = {param}")
+        return redirect("edu:tag_study")

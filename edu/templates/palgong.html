@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+
+<img src="https://th.bing.com/th/id/OIP.ZtrNE9GnhsrUDpGXFZ2gagHaJG?rs=1&pid=ImgDetMain"/>
+<br>
+<form action="/edu/milk" method="POST">
+    {% csrf_token %}
+    <input type="text" name="tea"/>
+    <input type="submit" name="저장"/>
+</form>
+{% endblock content %}
