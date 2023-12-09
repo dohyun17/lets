@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    내용 : {{feed.content}}
+</div>
+<div>
+    <img src="/media/{{ feed.photo}}" width="250px"/>
+</div>
+{% endblock %}

@@ -9,4 +9,5 @@ urlpatterns = [
     path('new', views.NewContent.as_view(), name="new_content"),
     path('servey', views.Servey.as_view(), name="servey"),
     path('milk',views.palgong.as_view(), name='palgong'),
+    path('feed/<int:pk>', views.FeedDetail.as_view(), name="feed_detail"),
 ]

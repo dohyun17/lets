@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-    <form action="{% url 'edu:new_content'%}" method="POST">
+    <form action="{% url 'edu:new_content'%}" method="POST"
+    enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="text" name="content"/>
+        <input type="text" name="content"/><br>
+        <input type="file" accept="image/*" name="up_photo"/><br/>
+
         <input type="submit" value="저장"/>
 
 

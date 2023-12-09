@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import View
+from django.views.generic import View, DetailView
 from.models import Feed
 # Create your views here.
 class Index(View):
@@ -24,22 +24,11 @@ class NewContent(View):
         return render(request, self.template_name)
     
     def post(self, request):
-        age = request.POST.get('age','0')
-        print(f'age:{age}')
-        if age=='':
-            age=0
-        else:
-            age = int(age)
-
-        pwd= request.POST.get('pwd', '')
-        print(f'비밀전호:{pwd}')
-
-        tel = request.POST.get('phone', '')
-        print(f'전화번호:{tel}')
-
-        param = request.POST.get("content")
-        print("전달받은 내용:" + param)
-        feed = Feed(content=param)
+        param = request.POST.get('content', '')
+        param2= request.FILES.get('up_photo', False)
+        
+        print(f"param2:{param2}")
+        feed = Feed(content=param, photo=param2)
         feed.save()
         return redirect('edu:tag_study')
     
@@ -56,6 +45,19 @@ class palgong(View):
         return render(request, self.template_name)
     
     def post(self, request):
-        param = request.POST.get('tea', '')
-        print(f"param = {param}")
+        param = request.POST.get('content', '')
+        param2= request.FILES.get('up_photo', False)
+
+        print(f"param2:{param2}")
+        feed = Feed(content=param, photo=param2)
+        feed.save()
         return redirect("edu:tag_study")
+class FeedDetail(DetailView):
+    model = Feed
+    template_name = "feed/detail.html"
+    def get_context_data(self, **kwargs) :
+        context = super().get_context_data(**kwargs)
+        feed = get_object_or_404(Feed, pk = self.kwargs['pk'])
+        context['feed'] = feed
+        
+        return context
