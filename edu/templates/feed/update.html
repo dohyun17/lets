@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="{% url 'edu:feed_update' feed.id%}" method="POST"
+    enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+       <input type="submit" value="저장"/>
+    </form>
+{% endblock content %}

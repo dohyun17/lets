@@ -6,4 +6,7 @@
 <div>
     <img src="/media/{{ feed.photo}}" width="250px"/>
 </div>
+<div>
+    <a href="{% url 'edu:feed_update' feed.id %}">수정하기</a>
+</div>
 {% endblock %}

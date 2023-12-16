@@ -10,4 +10,5 @@ urlpatterns = [
     path('servey', views.Servey.as_view(), name="servey"),
     path('milk',views.palgong.as_view(), name='palgong'),
     path('feed/<int:pk>', views.FeedDetail.as_view(), name="feed_detail"),
+    path('feed/<int:pk>/update', views.FeedUpdate.as_view(), name="feed_update"),
 ]
